@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		{% include "base.html" %}
+
+		<style>
+		    .menu-dropdown,
+		    .dropdown-menu 
+		    {
+		        overflow: auto
+			}
+
+		</style>
+	</head>
+
+	<body onload="load_all()">
+		<div id="fb-root"></div>
+
+		<header class="jumbotron masthead">
+				<h1>Daily New Apps</h1>
+				<p id="Date"></p>
+		</header>
+
+		<div>
+			<div class="navbar">
+			  <div class="navbar-inner">
+			  	<div class="container">
+				    <a class="brand">New iOS Apps</a>
+			  		<ul class="nav">
+			         	<li class="active"><a data-toggle="tab" class="app_list_type" id="all">All</a></li>
+						<li><a data-toggle="tab" class="app_list_type" id="free">Free</a></li>
+						<li><a data-toggle="tab" class="app_list_type" id="paid">Paid</a></li>
+						<li class="dropdown">
+							<button id="genre_dropdown_title" href="#" role="button" class="btn dropdown-toggle" data-toggle="dropdown">All Genres <span class="caret"></span></button>
+							<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+								<li><a tabindex="-1" href=javascript:load_genre("","All&nbsp;Genres")>All Genres</a></li>
+								<li><a tabindex="-1" href=javascript:load_genre("6018","Books")>Books</a></li>
+								<li><a tabindex="-1" href=javascript:load_genre("6000","Business")>Business</a></li>
+								<li><a tabindex="-1" href=javascript:load_genre("6022","Catalogs")>Catalogs</a></li>
+								<li><a tabindex="-1" href=javascript:load_genre("6017","Education")>Education</a></li>
+								<li><a tabindex="-1" href=javascript:load_genre("6016","Entertainment")>Entertainment</a></li>
+								<li><a tabindex="-1" href=javascript:load_genre("6015","Finance")>Finance</a></li>
+								<li><a tabindex="-1" href=javascript:load_genre("6023","Food&nbsp;&amp;&nbsp;Drink")>Food &amp; Drink</a></li>
+								<li><a tabindex="-1" href=javascript:load_genre("6014","Games")>Games</a></li>
+								<li><a tabindex="-1" href=javascript:load_genre("6013","Health&nbsp;&amp;&nbsp;Fitness")>Health &amp; Fitness</a></li>
+								<li><a tabindex="-1" href=javascript:load_genre("6012","Lifestyle")>Lifestyle</a></li>
+								<li><a tabindex="-1" href=javascript:load_genre("6020","Medical")>Medical</a></li>
+								<li><a tabindex="-1" href=javascript:load_genre("6011","Music")>Music</a></li>
+								<li><a tabindex="-1" href=javascript:load_genre("6010","Navigation")>Navigation</a></li>
+								<li><a tabindex="-1" href=javascript:load_genre("6009","News")>News</a></li>
+								<li><a tabindex="-1" href=javascript:load_genre("6021","Newsstand")>Newsstand</a></li>
+								<li><a tabindex="-1" href=javascript:load_genre("6008","Photo&nbsp;&amp;&nbsp;Video")>Photo &amp; Video</a></li>
+								<li><a tabindex="-1" href=javascript:load_genre("6007","Productivity")>Productivity</a></li>
+								<li><a tabindex="-1" href=javascript:load_genre("6006","Reference")>Reference</a></li>
+								<li><a tabindex="-1" href=javascript:load_genre("6005","Social&nbsp;Networking")>Social Networking</a></li>
+								<li><a tabindex="-1" href=javascript:load_genre("6004","Sports")>Sports</a></li>
+								<li><a tabindex="-1" href=javascript:load_genre("6003","Travel")>Travel</a></li>
+								<li><a tabindex="-1" href=javascript:load_genre("6002","Utilities")>Utilities</a></li>
+								<li><a tabindex="-1" href=javascript:load_genre("6001","Weather")>Weather</a></li>
+							</ul>
+						</li>
+					</li>
+
+			        </ul>
+			  	</div><!-- .container -->
+
+			   </div><!--/.navbar-inner -->
+
+			</div><!-- /.navbar -->
+
+			<aside>
+				
+			</aside>
+			
+
+			<!-- content  -->
+			<div class="container">
+				<div class="row">
+					<div class="span8" id="app_list"></div>
+					<div class="span4" id="ads">
+						<ul class="inline">
+							<li><a href="https://twitter.com/share" class="twitter-share-button" data-url="http://appsdaidy.com" data-text="Check daily new apps" data-via="ianluo_">Tweet</a></li>
+							<li><a id="google_plus_button">
+								<div class="g-plusone" data-size="medium"></div>
+							</li></a>
+							<li><a id="facebook_button">
+								<div class="fb-like" data-send="false" data-layout="button_count" data-width="450" data-show-faces="true"></div>
+							</li></a>
+						</ul>
+
+						<hr>
+
+						<p><a class="muted">promote</a><p>
+						<div class="hero-unit2">
+							<div class="row">
+								<div class="span3">
+									<p><a class="promote" href="#detail_modal" ref="popover" data-content="Awesome Surfing Spider" data-toggle="modal" id="634476755"><img width='50' height='50'  src = "http://a3.mzstatic.com/us/r1000/115/Purple/v4/ed/68/6f/ed686fce-6e95-9a2d-6c9e-6a0012a230c3/mzl.iikurftc.170x170-75.png"/>&nbsp;Awesome Surfing Spider</a></p>
+
+									<p><a class="promote" href="#detail_modal" ref="popover" data-content="Cut Cut Photo Frame" data-toggle="modal" id="516869923"><img width='50' height='50' src="http://a4.mzstatic.com/us/r1000/068/Purple/v4/ac/f3/1d/acf31d3d-dde5-e5e7-109e-b4fe49d6c064/mzm.afhgjgwr.170x170-75.png"/>&nbsp;Cut Cut Photo Frame</a></p>
+									
+									<p><a class="promote" href="#detail_modal" ref="popover" data-content="Pic Montage" data-toggle="modal" id="521064677"><img width='50' height='50' src="http://a2.mzstatic.com/us/r1000/085/Purple/v4/62/82/6a/62826a6e-9367-1037-d9da-d82750890e1e/mzl.xmuifquv.170x170-75.png"/>&nbsp;Pic Montage</a></P>
+
+									<p><a class="promote" href="#detail_modal" ref="popover" data-content="Postcard Maker" data-toggle="modal" id="495078926"><img width='50' height='50' src="http://a1.mzstatic.com/us/r1000/086/Purple/v4/e1/ae/8b/e1ae8b70-f910-1457-77e1-9c59a35d0a16/mza_8010637901802240857.170x170-75.png"/>&nbsp;Postcard Maker</a></p>
+								</div>
+							</div>
+						</div>
+					<div>
+				</div>
+			</div>
+
+			<div class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" id="detail_modal">
+				<div class="modal-header">
+				    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				    <h3 id="myModalLabel">App Detail</h3>
+  				</div>
+				<div class="modal-body" id="app_detail"></div>
+			</div>
+
+			<hr class="featurette-divider">
+
+			
+			
+		</div> <!-- container -->
+		
+		<hr>
+			<!-- footer -->
+		<footer>
+			<p class="pull-right"><a href="#">Back to top</a></p>
+		    <p>&copy; 2013 WOD Soft Studios. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+		</footer>
+	</body>
+		<script>	
+			var app_type = 'all';
+			var genre = "";
+
+			$(document).ready(function()
+			 {
+				$('.dropdown-menu, .menu-dropdown').css({maxHeight: 500});
+			});
+
+			$(".app_list_type").mouseover(function()
+			{			
+				$(".app_list_type").css('cursor', 'pointer');
+			});
+
+			$(".app_list_type").click(function()
+			{			
+				app_type = $(this).attr("id");
+
+				load_app_list();
+			});
+
+
+			function load_app_list()
+			{
+				$("#app_list").html("<img src='/static/img/loading.gif'/>");
+				
+				$.ajax({
+					url:"/get_app_list/"+app_type+"/"+genre,
+				}).done(function(data)
+				{
+					$("#app_list").html(data);
+				});
+			}
+
+			function load_genre(genre_in,title)
+			{
+				$('#genre_dropdown_title').html(title+'&nbsp;<span class="caret"></span>');
+				genre = genre_in;
+				load_app_list();
+			}
+
+			function load_all()
+			{
+				app_type = "all";
+
+				load_app_list();
+
+				get_date();
+
+			}
+
+			
+			function get_date()
+			{
+				var monthNames = [ "January", "February", "March", "April", "May", "June","July", "August", "September", "October", "November", "December" ];
+				var dayNames= ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
+
+				var newDate = new Date();
+				newDate.setDate(newDate.getDate() + 1);    
+				$('#Date').html(dayNames[newDate.getDay()] + " " + newDate.getDate() + ' ' + monthNames[newDate.getMonth()] + ' ' + newDate.getFullYear());
+			}
+			
+			
+			// scripts for showing twitter, facebook and google plus shareing button
+
+			(function(d, s, id) 
+			{
+				var js, fjs = d.getElementsByTagName(s)[0];
+				if (d.getElementById(id)) return;
+				js = d.createElement(s); 
+				js.id = id;
+				js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=278409145608745";
+				fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));
+
+			!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+
+			(function(){
+				var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+				po.src = 'https://apis.google.com/js/plusone.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+			})();
+
+			//promote section
+			// $(".promote").popover({trigger:"hover",placement:"top"});
+
+			$(".promote").click(function()
+		{			
+			$("#app_detail").html("<img valign='center' src='/static/img/loading.gif'/>");
+			$("#myModalLabel").html('App Detail');
+			
+			$.ajax({
+				url:"/get_app_detail/"+$(this).attr("id"),
+			}).done(function(data)
+			{
+				$("#app_detail").html(data);				
+			});
+		});
+		</script>
+</html>

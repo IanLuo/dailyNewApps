@@ -1,0 +1,116 @@
+
+	<!-- <p><h2 class="text-center"><img src="{{data.artworkUrl60}}"/> -->
+		<!-- {{data.trackCensoredName}}</h2></p> -->
+
+	<div class="row">
+		<div class="span1">
+			
+			<!-- <dl> -->
+				<dt><small class="muted">Price</small></dt>
+				<dd><small class="muted">$ {{data.price}}</small></dd>
+
+				<dt><small class="muted">Category</small></dt>
+				<dd><small class="muted">{{data.primaryGenreName}}</small></dd>
+
+				<dt><small class="muted">Rating</small></dt>
+				<dd><small class="muted">{{data.trackContentRating}}</small></dd>
+
+				<p class="text-left"><a href="{{data.trackViewUrl}}" title="Open in app store" target="_blank"><img src="http://linkmaker.itunes.apple.com/htmlResources/assets/images/web/linkmaker/badge_itunes-sm.png"></a></p>
+			<!-- </dl> -->
+		</div>
+
+		<div class="span5">
+			<!-- <dl> -->
+				<dt><small class="muted">Description</small></dt>
+				<dd>
+					<p><small class="muted">{{data.description}}</small></p>
+				</dd>
+				<dt><small class="muted">Seller</small></dt>
+				<dd><small><a class="muted" href="{{data.sellerUrl}}" target="_blank">{{data.sellerName}}</a><small></dd>
+			<!-- </dl> -->
+		</div>
+	</div>
+	
+
+	<dl>
+		<dt><small class="muted">Supported Devices<small></dt>
+		<dd>
+			<small class="muted">
+				{% for devices in data.supportedDevices %}
+					{{devices}}
+				{% endfor %}
+			</small>
+		</dd>
+	</dl>
+
+	<ul class="inline">
+		<li>
+			<a href="https://twitter.com/share" class="twitter-share-button" data-url="{{data.trackViewUrl}}" data-text="Check a new app:{{data.trackCensoredName}}" data-via="ianluo_">Tweet</a>
+		</li>
+		<li>
+			<div class="g-plusone" data-size="medium"></div>
+		</li>
+		<li>
+			<div class="fb-like" data-send="false" data-layout="button_count" data-width="450" data-show-faces="true"></div>
+		</li>
+	</ul>
+
+<hr class="devider"></hr>
+
+<div>
+	<ul class="nav nav-pills" id="screenshoots">
+		{% if data.screenshotUrls %}
+			<li><a data-toggle="pill" href="#iphone_screenshots">iPhone</a></li>
+		{% endif %}
+		
+		{% if data.ipadScreenshotUrls %}
+			<li><a data-toggle="pill" href="#ipad_screenshots">iPad</a></li>
+		{% endif %}
+	</ul>
+	
+	<div class="tab-content">
+		{% if data.screenshotUrls %}
+			<div id="iphone_screenshots" class="tab-pane">
+				<ul class="thumbnails">
+					{% for screen_url in data.screenshotUrls %}
+					<li class="span2">
+						<a href='{{screen_url}}' class="thumbnail" target="_blank">
+							<img class="card2-image-pic" src='{{screen_url}}' data-src="holder.js/100x200"/>
+						</a>
+					</li>
+					{% endfor %}	
+				</ul>
+			</div>
+		{% endif %}
+		
+		{% if data.ipadScreenshotUrls %}
+			<div id="ipad_screenshots" class="tab-pane">
+				<ul class="thumbnails">
+					{% for screen_url in data.ipadScreenshotUrls %}
+						<li class="span2">
+							<a href='{{screen_url}}' class="thumbnail" target="_blank">
+								<img class="card2-image-pic" src='{{screen_url}}' data-src="holder.js/100x200"/>
+							</a>
+						</li>
+					{% endfor %}
+				</ul>	
+			</div>
+		{% endif %}
+	</div>
+</div>
+
+
+<script>
+	$(function () 
+	{
+   	 	$('#screenshoots a:first').tab('show');
+  	})
+
+  	$("#myModalLabel").html('<img src="{{data.artworkUrl60}}"/>&nbsp;<a>{{data.trackCensoredName}}</a>');
+
+  	twttr.widgets.load();
+  	gapi.plusone.go();
+  	FB.XFBML.parse();
+	
+</script>
+
