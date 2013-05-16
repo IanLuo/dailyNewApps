@@ -2,11 +2,11 @@
 	<!-- <div class="row-fluid"> -->
 	      {% for entry in entries %}
 		  	<div class="span1">
-				<p><a class="thumbnail" href="#detail_modal" ref="popover" data-content="{{entry.name}}<hr><data." data-toggle="modal" id="{{entry.app_id}}"><img src='{{entry.image}}'/></a></p>
+				<p><a class="thumbnail" href="#detail_modal" ref="popover" data-content="{{entry.name}}" data-toggle="modal" id="{{entry.app_id}}"><img src='{{entry.image}}'/></a></p>
 			</div>	      
 
 		  {% empty %}
-			  <p>No new app under your selected condition today.</p>
+			  <p>No new app under your selected condition today, please check it here tomorrow.</p>
 		  {% endfor %}
 	    
 	<!-- </div> -->
