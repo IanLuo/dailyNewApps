@@ -19,7 +19,7 @@
 			$("#myModalLabel").html('App Detail');
 			
 			$.ajax({
-				url:"/get_app_detail/"+$(this).attr("id"),
+				url:"/appdetail/"+$(this).attr("id"),
 			}).done(function(data)
 			{
 				$("#app_detail").html(data);				

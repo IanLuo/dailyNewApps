@@ -156,7 +156,7 @@
 				$("#app_list").html("<img src='/static/img/loading.gif'/>");
 				
 				$.ajax({
-					url:"/get_app_list/"+app_type+"/"+genre,
+					url:"/applist/"+app_type+"/"+genre,
 				}).done(function(data)
 				{
 					$("#app_list").html(data);
