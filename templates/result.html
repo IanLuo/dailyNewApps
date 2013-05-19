@@ -156,7 +156,7 @@
 				$("#app_list").html("<img src='/static/img/loading.gif'/>");
 				
 				$.ajax({
-					url:"/newapps/applist/"+app_type+"/"+genre,
+					url:"/ios/applist/"+app_type+"/"+genre,
 				}).done(function(data)
 				{
 					$("#app_list").html(data);
@@ -221,7 +221,7 @@
 			$("#myModalLabel").html('App Detail');
 			
 			$.ajax({
-				url:"/newapps/appdetail/"+$(this).attr("id"),
+				url:"/ios/appdetail/"+$(this).attr("id"),
 			}).done(function(data)
 			{
 				$("#app_detail").html(data);				
