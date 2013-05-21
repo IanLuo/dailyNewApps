@@ -2,6 +2,7 @@
 <html lang="en">
 	<head>
 		{% include "base.html" %}
+		
 
 		<style>
 		    .menu-dropdown,
@@ -14,7 +15,7 @@
 		<title>Daily new apps for you iPhone and iPad</title>
 	</head>
 
-	<body onload="load_all()">
+	<body>
 		<div id="fb-root"></div>
 
 		<header class="jumbotron masthead">
@@ -131,6 +132,7 @@
 		</footer>
 	</body>
 		<script>	
+
 			var app_type = 'all';
 			var genre = "";
 
@@ -192,6 +194,7 @@
 				$('#Date').html(dayNames[newDate.getDay()] + " " + newDate.getDate() + ' ' + monthNames[newDate.getMonth()] + ' ' + newDate.getFullYear());
 			}
 			
+			window.onload = load_all();
 			
 			// scripts for showing twitter, facebook and google plus shareing button
 
