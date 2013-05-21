@@ -7,6 +7,7 @@ import views
 
 urlpatterns = patterns('',
     # Examples:
+    url(r'^$',views.home),
      url(r'^ios/+$', views.get_new_apps),
      url(r'^ios/appdetail/(?P<app_id>\d*)$',views.get_app_detail),
      url(r'^ios/applist/(?P<list_type>\w*)/(?P<genre>\w*)$',views.get_app_list),
