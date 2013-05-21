@@ -2,7 +2,7 @@
 	<!-- <div class="row-fluid"> -->
 	      {% for entry in entries %}
 		  	<div class="span1">
-				<p><a class="thumbnail" href="#detail_modal" ref="popover" data-content="{{entry.name}}" data-toggle="modal" id="{{entry.app_id}}"><img src='{{entry.image}}'/></a></p>
+				<p><a class="thumbnail" href="#detail_modal" ref="popover" data-content="<p><strong>{{entry.name}}</strong></p><p><small>{{entry.price}}</small></p><p><p><small>{{entry.genre_name}}</small></p>" data-toggle="modal" id="{{entry.app_id}}"><img src='{{entry.image}}'/></a></p>
 			</div>	      
 
 		  {% empty %}
@@ -28,6 +28,7 @@
 		
 		$(".thumbnail").css('cursor', 'pointer');
 
-		$(".thumbnail").popover({trigger:"hover"});
+		$(".thumbnail").popover({trigger:"hover", html : true });
+
 
 	</script>

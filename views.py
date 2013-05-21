@@ -82,11 +82,12 @@ def put_entries_into_cache(xml_response,cache):
                                 "image":element.find(im_ns + "image").text,
                                 "price":element.find(im_ns + "price").text,
                                 "genre_id":element.find(ns + "category").get(im_ns + "id"),
+                                "genre_name":element.find(ns + "category").get("term"),
                                 })
 
     #put the 'today's apps into cache, and keep them for one hour, which means the list refresh each hour
     cache.set(constants.CONST_CACHE_KEY_APP_ENTRY, json.dumps(entry_list), 3600)
-            
+
     return cache.get(constants.CONST_CACHE_KEY_APP_ENTRY)
     
 def creat_url(list_type,genre):
