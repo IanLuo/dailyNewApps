@@ -7,7 +7,13 @@
 			
 			<!-- <dl> -->
 				<dt><small class="muted">Price</small></dt>
-				<dd><small class="muted">$ {{data.price}}</small></dd>
+				<dd><small class="muted"> 
+					{% if data.price == 0.0 %}
+						Free
+					{% else %}
+						{{data.price}}
+					{% endif %}
+				</small></dd>
 
 				<dt><small class="muted">Category</small></dt>
 				<dd><small class="muted">{{data.primaryGenreName}}</small></dd>
