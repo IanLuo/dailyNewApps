@@ -5,6 +5,9 @@ from django.shortcuts import render_to_response
 from elementtree import ElementTree
 from django.core.cache import cache,get_cache
 
+def verification(request):
+    return render_to_response("google12cf796cb8c28014.html");
+
 def home(request):
     return render_to_response("home.html")
 
