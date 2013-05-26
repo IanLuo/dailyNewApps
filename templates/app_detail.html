@@ -2,8 +2,6 @@
 	<!-- <p><h2 class="text-center"><img src="{{data.artworkUrl60}}"/> -->
 		<!-- {{data.trackCensoredName}}</h2></p> -->
 
-
-
 	<div class="row">
 		<div class="span1">
 			
@@ -115,7 +113,7 @@
    	 	$('#screenshoots a:first').tab('show');
   	})
 
-  	$("#myModalLabel").html('<img src="{{data.artworkUrl60}}"/>&nbsp;<a>{{data.trackCensoredName}}</a>');
+  	$("#myModalLabel").html('<img src="{{data.artworkUrl60}}"/>&nbsp;{{data.trackCensoredName}}');
 
   	twttr.widgets.load();
   	gapi.plusone.go();

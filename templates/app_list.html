@@ -1,11 +1,21 @@
 <div class="row">
 	<!-- <div class="row-fluid"> -->
 	      {% for entry in entries %}
-		  	<div class="span1.5">
-		  		<div class="card" id="{{entry.app_id}}" ref="popover" data-content="<p><strong>{{entry.name}}</strong></p>" data-toggle="modal">
-					<p><a href="#detail_modal"><img src='{{entry.image}}'/></a></p>
-					<p><small>{{entry.price}}</small></p>
-					<p><small>{{entry.genre_name}}</small></p>
+		  	<div class="span1.1">
+		  		<div class="card" id="{{entry.app_id}}">
+		  			<div class = "row">
+		  				<div class="span1">
+		  					<a href="#detail_modal"><img src='{{entry.image}}'/></a>
+		  				</div>
+		  				<div class="span1">
+		  					<p>
+		  						<p class="muted">{{entry.price}}</p>
+		  						<small>{{entry.genre_name}}</small>
+		  					</p>
+		  				</div>
+		  			</div>
+					<p><strong>{{entry.name}}</strong></p>
+					
 				</div>
 			</div>	      
 
@@ -32,8 +42,5 @@
 		});
 		
 		$(".card").css('cursor', 'pointer');
-
-		$(".card").popover({trigger:"hover", html : true });
-
 
 	</script>
