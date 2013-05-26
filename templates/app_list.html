@@ -1,8 +1,12 @@
 <div class="row">
 	<!-- <div class="row-fluid"> -->
 	      {% for entry in entries %}
-		  	<div class="span1">
-				<p><a class="thumbnail" href="#detail_modal" ref="popover" data-content="<p><strong>{{entry.name}}</strong></p><p><small>{{entry.price}}</small></p><p><p><small>{{entry.genre_name}}</small></p>" data-toggle="modal" id="{{entry.app_id}}"><img src='{{entry.image}}'/></a></p>
+		  	<div class="span1.5">
+		  		<div class="card" id="{{entry.app_id}}" ref="popover" data-content="<p><strong>{{entry.name}}</strong></p>" data-toggle="modal">
+					<p><a href="#detail_modal"><img src='{{entry.image}}'/></a></p>
+					<p><small>{{entry.price}}</small></p>
+					<p><small>{{entry.genre_name}}</small></p>
+				</div>
 			</div>	      
 
 		  {% empty %}
@@ -13,8 +17,9 @@
 </div>
 
 <script>	
-		$(".thumbnail").click(function()
+		$(".card").click(function()
 		{			
+			$('#detail_modal').modal();
 			$("#app_detail").html("<img valign='center' src='/static/img/loading.gif'/>");
 			$("#myModalLabel").html('App Detail');
 			
@@ -26,9 +31,9 @@
 			});
 		});
 		
-		$(".thumbnail").css('cursor', 'pointer');
+		$(".card").css('cursor', 'pointer');
 
-		$(".thumbnail").popover({trigger:"hover", html : true });
+		$(".card").popover({trigger:"hover", html : true });
 
 
 	</script>

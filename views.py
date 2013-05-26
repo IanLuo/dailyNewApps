@@ -59,7 +59,7 @@ def get_app_detail(request,app_id = None):
         detail = urllib2.urlopen('https://itunes.apple.com/lookup?id=' + app_id).read()
         data = json.loads(detail)
         
-        cache.set(app_id,data,72000)
+        cache.set(app_id,data,7200)
     else:
         print 'got data from cache for %s' % app_id
 
